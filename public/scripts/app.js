@@ -9,7 +9,7 @@ $(document).ready(function(){
       for (i=0; i < json.bikeRides.length; i++) {
         $("#routes").append("Name: "+json.bikeRides[i].name+"<br>");
         $("#routes").append("Length (Miles): "+json.bikeRides[i].lengthMiles+"<br>");
-        $("#routes").append("Elevation Gain (Feet): "+json.bikeRides[i].elevationGainFeet+"<br>");
+        $("#routes").append("Elevation Gain (Feet): "+json.bikeRides[i].elevationGainFeet+"<br><br>");
         // $("#routes").append('<a href=json.bikeRides[i].stravaLink>Strava Route</a>'+"<br><br>");
         // $("#routes").append("Hello!")
       }

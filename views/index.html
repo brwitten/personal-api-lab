@@ -26,23 +26,33 @@
       </div>
       <div class="row">
         <div class="col-md-8 col-md-offset-2">
+
+          <!-- form to add a new route -->
+        <form action="/api/routes" method="POST">
+          <h4 id="addNew"> Add a New Ride </h4>
+          <input id="newName" type="text" placeholder="Ride Name" required>
+          <input id="newDistance" type="text" placeholder="Length in Miles" required>
+          <input id="newElevation" type="text" placeholder="Elevation Gain in Feet" required>
+          <input type="submit" value="Submit">
+
+            <!-- form to filter routes -->
           <form action="/api/routes" method="PUT">
             <h4 id="filters"> Filter Rides </h4>
             <input id="maxMiles" type="text" placeholder="Max distance (miles)">
             <input type="submit" value="Submit">
-            <br>
 
-            <!-- form to filter routes -->
+
             <input id="maxFeet" type="text" placeholder="Max elevation gain (feet)">
             <input type="submit" value="Submit">
 
             <!-- space to show existing routes -->
             <br>
+            <h4> All Routes </h4>
             <div id="routes">
             </div>
 
-            <!-- form to add a new route -->
-            
+
+
 
           </form>
         </div>
