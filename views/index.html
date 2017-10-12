@@ -24,6 +24,18 @@
           <h4><a href="/api">Read My API Documentation</a></h4>
         </div>
       </div>
+      <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+          <form action="/api/routes" method="PUT">
+            <h4 id="filters"> Filter Rides </h4>
+            <input id="maxMiles" type="text" value="Max distance (miles)">
+            <input type="submit" value="Submit">
+            <br>
+            <input id="maxFeet" type="text" value="Max elevation gain (feet)">
+            <input type="submit" value="Submit">
+          </form>
+        </div>
+      </div>
     </div>
   </body>
 </html>
