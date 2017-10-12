@@ -48,7 +48,7 @@ app.get('/api', function apiIndex(req, res) {
     documentationUrl: "TBD on Github",
     baseUrl: "TBD on herokuapp",
     endpoints: [
-      {method: "GET", path: "/api", description: "Describes all available endpoints"},
+      {method: "GET", path: "/api", description: "Describes all available endpoints for this bike ride API"},
       {method: "GET", path: "/api/profile", description: "Provides information about me"},
       {method: "GET", path: "/api/routes", description: "Shows all bike routes"},
       {method: "POST", path: "/api/route", description: "Create a new route"},
@@ -57,6 +57,39 @@ app.get('/api', function apiIndex(req, res) {
     ]
   })
 });
+
+// profile route
+app.get('/api/profile', function apiIndex(req, res) {
+  res.json({
+    name: "Beth Witten",
+    picture: "https://avatars1.githubusercontent.com/u/30534735?v=4&s=400&u=a38445bfe8f3c8675397a01068c694a7719c21c5",
+    githubLink: "https://github.com/brwitten",
+    personalSite: "https://brwitten.github.io/",
+    currentCity: "San Francisco, CA",
+    pets: [{currentNumber: 0, futureNumber: "> 0 (hopefully)"}]
+  });
+});
+
+// Shows all bike routes
+app.get('/api/routes', function apiIndex(req, res) {
+  res.json({headline: "I'm just testing! I'll show all bike routes."});
+});
+
+// {method: "POST", path: "/api/route", description: "Create a new route"}
+app.post('/api/routes', function apiIndex(req, res) {
+  res.json({headline: "I'm just testing! I'll let you make a new route."});
+});
+
+// {method: "PUT", path: "/api/route/:id", description: "Update an existing route"}
+app.put('/api/routes/:id', function apiIndex(req, res) {
+  res.json({headline: "I'm just testing! I'll let you update an existing route."});
+});
+
+// {method: "DELETE", path: "/api/route/:id", description: "Delete an existing route"}
+app.delete('/api/routes', function apiIndex(req, res) {
+  res.json({headline: "I'm just testing! I'll let you delete an existing route."});
+});
+
 
 /**********
  * SERVER *
