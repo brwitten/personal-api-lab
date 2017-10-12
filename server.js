@@ -22,8 +22,8 @@ app.use(function(req, res, next) {
 // var db = require('./models');
 
 var bikeRides = [
-  {_id: 0, name: "Hawk Hill", lengthMiles: 22.1, elevationGainFeet: 1762, stravaLink: "https://www.strava.com/routes/4104988"},
-  {_id: 1, name: "Paradise Loops", lengthMiles: 43.5, elevationGainFeet: 2323, stravaLink: "https://www.strava.com/routes/7852366"}
+  {_id: 0, name: "Hawk Hill", lengthMiles: 22.1, elevationGainFeet: 1762, stravaLink: "https://www.strava.com/routes/4104988", img: "/public/images/hawk_hill.png"},
+  {_id: 1, name: "Paradise Loop", lengthMiles: 43.5, elevationGainFeet: 2323, stravaLink: "https://www.strava.com/routes/7852366", img: "/public/images/paradise_loop.png"}
 ]
 
 /**********
@@ -50,8 +50,8 @@ app.get('/', function homepage(req, res) {
 app.get('/api', function apiIndex(req, res) {
   res.json({
     message: "Welcome to my bike ride API! Here's what you need to know!",
-    documentationUrl: "TBD on Github",
-    baseUrl: "TBD on herokuapp",
+    documentationUrl: "https://github.com/brwitten/personal-api-lab",
+    baseUrl: "https://mighty-savannah-30909.herokuapp.com/",
     endpoints: [
       {method: "GET", path: "/api", description: "Describes all available endpoints for this bike ride API"},
       {method: "GET", path: "/api/profile", description: "Provides information about me"},
