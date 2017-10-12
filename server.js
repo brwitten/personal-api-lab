@@ -21,6 +21,11 @@ app.use(function(req, res, next) {
 
 // var db = require('./models');
 
+var bikeRides = [
+  {_id: 0, name: "Hawk Hill", lengthMiles: 22, elevationGainFeet: 1762, stravaLink: "https://www.strava.com/routes/4104988"},
+  {_id: 1, name: "Paradise Loops", lengthMiles: 43.5, elevationGainFeet: 2323, stravaLink: "https://www.strava.com/routes/7852366"}
+]
+
 /**********
  * ROUTES *
  **********/
@@ -72,7 +77,7 @@ app.get('/api/profile', function apiIndex(req, res) {
 
 // Shows all bike routes
 app.get('/api/routes', function apiIndex(req, res) {
-  res.json({headline: "I'm just testing! I'll show all bike routes."});
+  res.json({bikeRides});
 });
 
 // {method: "POST", path: "/api/route", description: "Create a new route"}
