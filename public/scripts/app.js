@@ -6,7 +6,8 @@ $(document).ready(function(){
     method: "GET",
     url: "http://localhost:3000/api/routes",
     success: function(json){
-      console.log(json)
+      console.log(json);
+      $("#routes").html();
     }
   })
 });
