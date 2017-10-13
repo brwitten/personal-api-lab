@@ -8,10 +8,14 @@ var bikeRideList = [
   {name: "Paradise Loop", lengthMiles: 43.5, elevationGainFeet: 2323}
 ]
 
-db.BikeRide.create(bikeRideList, function(err, successBikes){
-  if (err){
-    return console.log("Error:", err);
-  }
-  console.log("Created new bike routes", successBikes);
-  process.exit(); // we're all done! Exit the program.
+db.BikeRide.remove({}, function(err, successBikes){
+  console.log("Removed all bike routes");
+  db.BikeRide.create(bikeRideList, function(err, successBikes){
+    if (err){
+      console.log("Error:", err);
+      return;
+    }
+    console.log("Created new bike routes", successBikes);
+    process.exit(); // we're all done! Exit the program.
+  })
 })
