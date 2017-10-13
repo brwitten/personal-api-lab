@@ -2,6 +2,7 @@ console.log("Sanity Check: JS is working!");
 
 $(document).ready(function(){
 
+// should update the below nasty jquery to use template literals
   $.ajax({
     method: "GET",
     url: "http://localhost:3000/api/routes",
@@ -14,4 +15,29 @@ $(document).ready(function(){
       }
     }
   })
+
+  // create listener event on #addNew form
+
+  $('#addNew').on('submit', function(e) {
+    e.preventDefault();
+    $.ajax({
+      method: "POST",
+      url: '/api/routes',
+      data: $(this).serialize(),
+      success: newRouteSuccess,
+      error: newRouteError,
+    });
+  });
+
+function newRouteSuccess(json) {
+  $('#addNew input').val('');
+  location.reload();
+};
+
+function newRouteError(a,b,c) {
+  console.log('new route error!');
+  console.log(b);
+  console.log(c);
+};
+
 });

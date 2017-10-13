@@ -70,7 +70,7 @@ app.get('/api/profile', function apiIndex(req, res) {
   });
 });
 
-// Shows all bike routes
+// Shows all bike routes; connected to DB
 app.get('/api/routes', function apiIndex(req, res) {
 // TODO: Run db.BikeRide.find() here to get all and in the success callback res.json(success)
   db.BikeRide.find(function (err, allRoutes) {
@@ -82,12 +82,11 @@ app.get('/api/routes', function apiIndex(req, res) {
 // {method: "POST", path: "/api/route", description: "Create a new route"}
 app.post('/api/routes', function apiIndex(req, res) {
   var new_route = {
-    id: (bikeRides.length+1),
     name: req.body.newName,
     lengthMiles: req.body.newDistance,
     elevationGainFeet: req.body.newElevation
   };
-  bikeRides.push(new_route);
+  db.BikeRide.create(new_route);
   res.json(new_route);
 });
 
