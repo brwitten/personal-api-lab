@@ -19,7 +19,7 @@ app.use(function(req, res, next) {
  * DATABASE *
  ************/
 
-// var db = require('./models');
+var db = require('./models');
 
 /**********
  * ROUTES *
@@ -72,7 +72,10 @@ app.get('/api/profile', function apiIndex(req, res) {
 
 // Shows all bike routes
 app.get('/api/routes', function apiIndex(req, res) {
-  res.json({bikeRides});
+// TODO: Run db.BikeRide.find() here to get all and in the success callback res.json(success)
+  db.BikeRide.find(function (err, allRoutes) {
+      res.json({allRoutes});
+  })
   // put in function that uses req.query to filter to specific distances
 });
 
